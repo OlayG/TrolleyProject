@@ -1,0 +1,47 @@
+package com.example.ogure.trolleyproject.Splash;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import com.example.ogure.trolleyproject.R;
+import com.example.ogure.trolleyproject.MainActivity;
+
+/**
+ * Created by ogure on 11/11/2015.
+ */
+public class SplashScreen extends Activity {
+
+    Context context;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash);
+
+
+
+        Thread timerThread = new Thread(){
+            public void run(){
+                try{
+                    sleep(3000);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }finally{
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        timerThread.start();
+    }
+
+    @Override
+    protected void onPause() {
+        // TODO Auto-generated method stub
+        super.onPause();
+        finish();
+    }
+}
+
