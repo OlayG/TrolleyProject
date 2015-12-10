@@ -1,4 +1,5 @@
 package com.example.ogure.trolleyproject.Adapter;
+import android.util.Log;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -41,16 +42,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public Button TvRouteName;
-//        public ImageView IvImageView;
+//        public TextView TvRouteId;
         public CardView mCardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            TvRouteName = (Button) itemView.findViewById(R.id.route_name);
-//            IvImageView = (ImageView) itemView.findViewById(R.id.trolley_photo);
             mCardView = (CardView) itemView.findViewById(R.id.cv);
             mCardView.setOnClickListener(this);
+            TvRouteName = (Button) itemView.findViewById(R.id.route_name);
+//            TvRouteId = (TextView) itemView.findViewById(R.id.route_id);
             TvRouteName.setOnClickListener(this);
         }
 
@@ -59,6 +60,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             int position = getAdapterPosition();
             Bus s = mStations.get(position);
             Bus.stations og = mBusStations.get(position);
+
 
             Globals g = Globals.getInstance();
             g.setData(position);
@@ -87,14 +89,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         Bus stationPos = mStations.get(position);
         Bus.stations bsPos = mBusStations.get(position);
 
-
-               //holder.TvStationName.setText(bsPos.getStationName());
-
-
         holder.TvRouteName.setText(stationPos.getmStationName());
-        //holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
+//        holder.TvRouteId.setText(String.valueOf(stationPos.getmStationId()));
         holder.mCardView.setTag(position);
-
 
     }
 

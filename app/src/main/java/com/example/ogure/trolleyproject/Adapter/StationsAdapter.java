@@ -74,13 +74,10 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
     @Override
     public void onBindViewHolder(StationsAdapter.ViewHolder holder, int position) {
 
-
         Globals g = Globals.getInstance();
         position = g.getData();
 
             Bus.stations trolleyPos = mBusStations.get(position);
-
-
             holder.TvStationName.setText(trolleyPos.getStationName());
             holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
             holder.mCardView.setTag(position);
