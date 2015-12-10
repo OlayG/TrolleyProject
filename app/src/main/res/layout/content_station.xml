@@ -26,7 +26,8 @@
         android:text="Upcoming Stations"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.11" />
+        android:layout_weight="0.11"
+        android:layout_marginTop="20dp" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
