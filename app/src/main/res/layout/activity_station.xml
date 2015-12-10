@@ -21,6 +21,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:id="@+id/map_image"
+        android:clickable="true"
+        android:src="@drawable/map_image"
+        />
+
     <include layout="@layout/content_station" />
 
 </android.support.design.widget.CoordinatorLayout>
