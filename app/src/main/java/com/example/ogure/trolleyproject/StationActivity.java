@@ -2,21 +2,15 @@ package com.example.ogure.trolleyproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
-import com.example.ogure.trolleyproject.Adapter.MainAdapter;
 import com.example.ogure.trolleyproject.Adapter.StationsAdapter;
 import com.example.ogure.trolleyproject.Model.Bus;
-import com.example.ogure.trolleyproject.RecyclerViewStyle.DividerItemDecoration;
 import com.example.ogure.trolleyproject.Service.StationService;
 import com.example.ogure.trolleyproject.Service.StationServiceProvider;
 
@@ -54,9 +48,6 @@ public class StationActivity extends AppCompatActivity {
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Intent startingIntent = getIntent();
         String routePos = startingIntent.getStringExtra("position");
