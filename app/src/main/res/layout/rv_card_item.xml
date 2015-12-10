@@ -3,32 +3,46 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="60dp"
     android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
     card_view:cardPreventCornerOverlap="false"
-    card_view:cardUseCompatPadding="true"
     card_view:cardCornerRadius="30dp"
-    android:layout_marginTop="9dp"
-    android:layout_marginLeft="9dp"
-    android:layout_marginRight="9dp"
-    card_view:cardElevation="3dp"
+    card_view:cardElevation="0dp"
     android:fadingEdge="none"
-    android:layout_marginBottom="0dp"
-    android:padding="10dp"
-    android:background="#0048a0"
+    android:layout_marginBottom="10dp"
     android:nestedScrollingEnabled="true"
-    android:foregroundGravity="center">
+    android:foregroundGravity="center"
+    android:background="@android:color/white">
 
+    <RelativeLayout
+        android:id="@+id/top_layout"
 
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Button"
             android:id="@+id/route_name"
-            android:layout_marginTop="19dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:requiresFadingEdge="none"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:bottomRightRadius="30dp"
+            android:bottomLeftRadius="30dp"
+            android:topLeftRadius="30dp"
+            android:topRightRadius="30dp"
+            android:background="#003e95"
+            android:autoText="false"
+            android:textColor="@android:color/white" />
 
-    </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

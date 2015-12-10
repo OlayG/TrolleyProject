@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 
 import com.example.ogure.trolleyproject.GlobalVar.Globals;
 import com.example.ogure.trolleyproject.Model.Bus;
@@ -39,17 +40,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView TvRouteName;
+        public Button TvRouteName;
 //        public ImageView IvImageView;
         public CardView mCardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            TvRouteName = (TextView) itemView.findViewById(R.id.route_name);
+            TvRouteName = (Button) itemView.findViewById(R.id.route_name);
 //            IvImageView = (ImageView) itemView.findViewById(R.id.trolley_photo);
             mCardView = (CardView) itemView.findViewById(R.id.cv);
             mCardView.setOnClickListener(this);
+            TvRouteName.setOnClickListener(this);
         }
 
         @Override
