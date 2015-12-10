@@ -3,7 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:paddingTop="40dp"
+    android:weightSum="1">
 
 
     <ImageView
@@ -12,22 +14,25 @@
         android:id="@+id/imageView2"
         android:src="@drawable/kean_logo_1"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="50dp"/>
+        android:paddingTop="40dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Space
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Kean University"
-        android:textColor="@color/colorPrimary111"
-        android:textSize="25sp"
-        android:shadowColor="@color/colorPrimary"
-        android:shadowRadius="2.5"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:id="@+id/textView2"
-        android:layout_gravity="bottom|center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.42" />
 
+    <!--<ImageView-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:id="@+id/imageView3"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:src="@drawable/spinner" />-->
 
-
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/spinner"
+        android:layout_gravity="center_horizontal"
+        />
 </LinearLayout>
