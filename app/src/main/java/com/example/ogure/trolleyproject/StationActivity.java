@@ -49,11 +49,6 @@ public class StationActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
-        loadRV1();
-    }
-
-    private void loadRV1 () {
         Intent startingIntent = getIntent();
         String pos = startingIntent.getStringExtra("position");
         String station_name = startingIntent.getStringExtra("station_name"); // or whatever.
@@ -63,6 +58,10 @@ public class StationActivity extends AppCompatActivity {
         TvStationName = (TextView) findViewById(R.id.TvStationName);
         TvStationName.setText(station_name);
 
+        loadRV1();
+    }
+
+    private void loadRV1 () {
         StationService stationService = StationServiceProvider.createService(StationService.class);
         Call<List<Station>> call = stationService.listStations();
         call.enqueue(new Callback<List<Station>>() {

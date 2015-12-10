@@ -22,9 +22,7 @@ import java.util.List;
  */
 public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHolder> {
 
-    private static List<Station> stationArray;
-
-
+    private List<Station> stationArray;
 
     public StationsAdapter(List<Station> stations) {
         stationArray = stations;
