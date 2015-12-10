@@ -24,7 +24,6 @@ import retrofit.Retrofit;
 
 public class StationActivity extends AppCompatActivity {
 
-    TextView TvStationName;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -60,11 +59,9 @@ public class StationActivity extends AppCompatActivity {
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
 
-        TvStationName = (TextView) findViewById(R.id.TvStationName);
-        TvStationName.setText(station_name);
-
         StationService stationService = StationServiceProvider.createService(StationService.class);
         Call<List<Station>> call = stationService.listStations();
+
         call.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Response<List<Station>> response, Retrofit retrofit) {
