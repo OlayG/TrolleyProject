@@ -42,7 +42,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public Button TvRouteName;
-        public TextView TvRouteId;
+//        public TextView TvRouteId;
         public CardView mCardView;
 
         public ViewHolder(View itemView) {
@@ -51,7 +51,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             mCardView = (CardView) itemView.findViewById(R.id.cv);
             mCardView.setOnClickListener(this);
             TvRouteName = (Button) itemView.findViewById(R.id.route_name);
-            TvRouteId = (TextView) itemView.findViewById(R.id.route_id);
+//            TvRouteId = (TextView) itemView.findViewById(R.id.route_id);
             TvRouteName.setOnClickListener(this);
         }
 
@@ -90,7 +90,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         Bus.stations bsPos = mBusStations.get(position);
 
         holder.TvRouteName.setText(stationPos.getmStationName());
-        holder.TvRouteId.setText(String.valueOf(stationPos.getmStationId()));
+//        holder.TvRouteId.setText(String.valueOf(stationPos.getmStationId()));
         holder.mCardView.setTag(position);
 
     }
