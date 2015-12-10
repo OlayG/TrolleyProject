@@ -57,17 +57,14 @@ public class StationActivity extends AppCompatActivity {
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
 
-        TvStationName = (TextView) findViewById(R.id.TvStationName);
-        TvStationName.setText(station_name);
-
         IvStationImage = (ImageView) findViewById(R.id.map_image);
         IvStationImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-                startActivity(intent);
-
-                v.getContext().startActivity(intent);
+//                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+//                startActivity(intent);
+//
+//                v.getContext().startActivity(intent);
             }
         });
 
