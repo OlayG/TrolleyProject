@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ogure.trolleyproject.Adapter.StationsAdapter;
@@ -25,6 +27,7 @@ import retrofit.Retrofit;
 public class StationActivity extends AppCompatActivity {
 
     TextView TvStationName;
+    ImageView IvStationImage;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -53,6 +56,20 @@ public class StationActivity extends AppCompatActivity {
         String station_name = startingIntent.getStringExtra("station_name"); // or whatever.
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
+
+        TvStationName = (TextView) findViewById(R.id.TvStationName);
+        TvStationName.setText(station_name);
+
+        IvStationImage = (ImageView) findViewById(R.id.map_image);
+        IvStationImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                startActivity(intent);
+
+                v.getContext().startActivity(intent);
+            }
+        });
 
         loadRV1();
     }

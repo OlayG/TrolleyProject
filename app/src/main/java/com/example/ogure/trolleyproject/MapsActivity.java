@@ -58,18 +58,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        /*gps = new GPSTracker(MapsActivity.this);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            map.setMyLocationEnabled(true);
-        } else {
-           //gps.showSettingsAlert(); // Show rationale and request permission.
-            Toast.makeText(
-                    getApplicationContext(), "Your Location is -\nLat: ", Toast.LENGTH_LONG).show();
-        }*/
-
-
-
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(40.6789642, -74.2329902), 17));
@@ -94,6 +82,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
                 .position(new LatLng(40.681053, -74.225763)));
 
+        //Wilkins
+        map.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("station_flag", 100, 100)))
+                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+                .position(new LatLng(40.678725, -74.231693)));
+
+
+        //Hennings Hall
+        map.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("station_flag", 100, 100)))
+                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+                .position(new LatLng(40.680225, -74.233799)));
     }
 
 
