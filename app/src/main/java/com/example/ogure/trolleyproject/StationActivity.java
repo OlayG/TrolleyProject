@@ -60,10 +60,10 @@ public class StationActivity extends AppCompatActivity {
         IvStationImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-                startActivity(intent);
-
-                v.getContext().startActivity(intent);
+//                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+//                startActivity(intent);
+//
+//                v.getContext().startActivity(intent);
             }
         });
 
