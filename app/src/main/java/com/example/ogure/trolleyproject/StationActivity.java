@@ -53,7 +53,6 @@ public class StationActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         Intent startingIntent = getIntent();
-        String station_name = startingIntent.getStringExtra("station_name"); // or whatever.
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
 

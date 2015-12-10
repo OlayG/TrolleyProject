@@ -1,17 +1,10 @@
 package com.example.ogure.trolleyproject.Adapter;
-import android.util.Log;
-
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Button;
 
 import com.example.ogure.trolleyproject.GlobalVar.Globals;
@@ -66,8 +59,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             g.setData(position);
 
             Intent i = new Intent(v.getContext(), StationActivity.class);
-            i.putExtra("position", position);
-            i.putExtra("station_name", og.getStationName());
             i.putExtra("trolley_name", s.getmStationName());
             v.getContext().startActivity(i);
 
@@ -87,10 +78,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(MainAdapter.ViewHolder holder, int position) {
         Bus stationPos = mStations.get(position);
-        Bus.stations bsPos = mBusStations.get(position);
 
         holder.TvRouteName.setText(stationPos.getmStationName());
-//        holder.TvRouteId.setText(String.valueOf(stationPos.getmStationId()));
         holder.mCardView.setTag(position);
 
     }
