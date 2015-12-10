@@ -44,5 +44,15 @@
             android:autoText="false"
             android:textColor="@android:color/white" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/route_id"
+            android:layout_alignBottom="@+id/route_name"
+            android:layout_toLeftOf="@+id/route_name"
+            android:layout_toStartOf="@+id/route_name" />
+
     </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -21,7 +21,6 @@ import retrofit.Callback;
 import retrofit.Response;
 import retrofit.Retrofit;
 
-
 public class StationActivity extends AppCompatActivity {
 
     TextView TvStationName;
@@ -49,8 +48,13 @@ public class StationActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+
+        loadRV1();
+    }
+
+    private void loadRV1 () {
         Intent startingIntent = getIntent();
-        String routePos = startingIntent.getStringExtra("position");
+        String pos = startingIntent.getStringExtra("position");
         String station_name = startingIntent.getStringExtra("station_name"); // or whatever.
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
@@ -58,14 +62,10 @@ public class StationActivity extends AppCompatActivity {
         TvStationName = (TextView) findViewById(R.id.TvStationName);
         TvStationName.setText(station_name);
 
-        loadRV1(routePos);
-    }
-
-    private void loadRV1(String pos) {
-
         StationService stationService = StationServiceProvider.createService(StationService.class);
         Call<List<Bus>> call = stationService.listTrolley();
         call.enqueue(new Callback<List<Bus>>() {
+
             @Override
             public void onResponse(Response<List<Bus>> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
@@ -74,7 +74,6 @@ public class StationActivity extends AppCompatActivity {
                 } else {
                     Log.d("Oops Something is wrong", response.message());
                 }
-
             }
 
             @Override
