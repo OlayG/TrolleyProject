@@ -53,12 +53,8 @@ public class StationActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         Intent startingIntent = getIntent();
-        String station_name = startingIntent.getStringExtra("station_name"); // or whatever.
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
-
-        TvStationName = (TextView) findViewById(R.id.TvStationName);
-        TvStationName.setText(station_name);
 
         IvStationImage = (ImageView) findViewById(R.id.map_image);
         IvStationImage.setOnClickListener(new View.OnClickListener() {

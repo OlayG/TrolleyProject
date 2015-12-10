@@ -5,16 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.ogure.trolleyproject.GlobalVar.Globals;
-import com.example.ogure.trolleyproject.Model.Bus;
 import com.example.ogure.trolleyproject.Model.Station;
 import com.example.ogure.trolleyproject.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,7 +26,6 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder  {
         public TextView TvStationName;
         public TextView TvArrivalTime;
-//      public ImageView IvImageView;
         public CardView mCardView;
         public TextView stationID;
 
@@ -41,10 +33,8 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 
-            //TvRouteName = (TextView) itemView.findViewById(R.id.route_name);
             TvArrivalTime = (TextView) itemView.findViewById(R.id.trolley_time);
             TvStationName = (TextView) itemView.findViewById(R.id.station_name);
-            //IvImageView = (ImageView) itemView.findViewById(R.id.);
             stationID = (TextView) itemView.findViewById(R.id.station_id);
             mCardView = (CardView) itemView.findViewById(R.id.cv1);
         }
@@ -67,9 +57,7 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
 
         holder.TvStationName.setText(stationLoc.getmStationName());
         holder.stationID.setText(String.valueOf(stationLoc.getmStationId()));
-//        stationID = (TextView) itemView.findViewById(R.id.station_id);
-         holder.TvArrivalTime.setText((String) stationLoc.getTimestamp());
-        //holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
+        holder.TvArrivalTime.setText(stationLoc.getTimestamp());
         holder.mCardView.setTag(position);
 
     }

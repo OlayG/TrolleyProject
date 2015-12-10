@@ -12,8 +12,6 @@ import com.example.ogure.trolleyproject.MainActivity;
  */
 public class SplashScreen extends Activity {
 
-    Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
