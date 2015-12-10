@@ -75,7 +75,9 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
         Station stationLoc = mStations.get(position);
 
         holder.TvStationName.setText(stationLoc.getmStationName());
-       // holder.TvArrivalTime.setText((int) stationLoc.getTimestamp());
+        holder.stationID.setText(String.valueOf(stationLoc.getmStationId()));
+//        stationID = (TextView) itemView.findViewById(R.id.station_id);
+         holder.TvArrivalTime.setText((String) stationLoc.getTimestamp());
         //holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
         holder.mCardView.setTag(position);
 
