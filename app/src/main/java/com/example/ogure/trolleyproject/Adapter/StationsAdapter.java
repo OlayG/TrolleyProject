@@ -30,7 +30,7 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
         mStations = stations;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder  {
         public TextView TvStationName;
         public TextView TvArrivalTime;
 //      public ImageView IvImageView;
@@ -47,15 +47,6 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
             //IvImageView = (ImageView) itemView.findViewById(R.id.);
             stationID = (TextView) itemView.findViewById(R.id.station_id);
             mCardView = (CardView) itemView.findViewById(R.id.cv1);
-            mCardView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            int position = getAdapterPosition();
-            Station s = mStations.get(position);
-
-            Toast.makeText(v.getContext(), position , Toast.LENGTH_SHORT).show();
         }
     }
 
