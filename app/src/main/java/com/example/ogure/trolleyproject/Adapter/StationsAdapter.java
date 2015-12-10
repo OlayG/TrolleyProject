@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.ogure.trolleyproject.GlobalVar.Globals;
 import com.example.ogure.trolleyproject.Model.Bus;
+import com.example.ogure.trolleyproject.Model.Station;
 import com.example.ogure.trolleyproject.R;
 
 import java.util.ArrayList;
@@ -21,22 +22,18 @@ import java.util.List;
  */
 public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHolder> {
 
-    private static List<Bus> mStations;
-    private static List<Bus.stations> mBusStations;
+    private static List<Station> mStations;
 
 
 
-    public StationsAdapter(List<Bus> stations) {
+    public StationsAdapter(List<Station> stations) {
         mStations = stations;
-        mBusStations = new ArrayList<>();
-        for (Bus bus : stations) {
-            mBusStations.addAll(bus.getStationsList());
-        }
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView TvStationName;
-//        public ImageView IvImageView;
+        public TextView TvArrivalTime;
+//      public ImageView IvImageView;
         public CardView mCardView;
         public TextView stationID;
 
@@ -45,8 +42,9 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
             super(itemView);
 
             //TvRouteName = (TextView) itemView.findViewById(R.id.route_name);
+            TvArrivalTime = (TextView) itemView.findViewById(R.id.trolley_time);
             TvStationName = (TextView) itemView.findViewById(R.id.station_name);
-//            IvImageView = (ImageView) itemView.findViewById(R.id.station_photo);
+            //IvImageView = (ImageView) itemView.findViewById(R.id.);
             stationID = (TextView) itemView.findViewById(R.id.station_id);
             mCardView = (CardView) itemView.findViewById(R.id.cv1);
             mCardView.setOnClickListener(this);
@@ -55,7 +53,7 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            Bus.stations og = mBusStations.get(position);
+            Station s = mStations.get(position);
 
             Toast.makeText(v.getContext(), position , Toast.LENGTH_SHORT).show();
         }
@@ -74,15 +72,12 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(StationsAdapter.ViewHolder holder, int position) {
+        Station stationLoc = mStations.get(position);
 
-        Globals g = Globals.getInstance();
-        position = g.getData();
-
-            Bus.stations trolleyPos = mBusStations.get(position);
-            holder.TvStationName.setText(trolleyPos.getStationName());
-            holder.stationID.setText(String.valueOf(trolleyPos.getStationID()));
-//            holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
-            holder.mCardView.setTag(position);
+        holder.TvStationName.setText(stationLoc.getmStationName());
+        holder.TvArrivalTime.setText((int) stationLoc.getTimestamp());
+        //holder.IvImageView.setImageResource(R.drawable.kean_logo_1);
+        holder.mCardView.setTag(position);
 
     }
 

@@ -19,6 +19,4 @@ public interface StationService {
     @GET("routes/1/stations")
     Call<List<Station>> listStations();
 
-    /*@GET("stations")
-    Call<List<Station>> listStations();*/
 }
