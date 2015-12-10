@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +14,6 @@ import android.view.View;
 
 import com.example.ogure.trolleyproject.Adapter.MainAdapter;
 import com.example.ogure.trolleyproject.Model.Bus;
-import com.example.ogure.trolleyproject.RecyclerViewStyle.DividerItemDecoration;
 import com.example.ogure.trolleyproject.Service.StationService;
 import com.example.ogure.trolleyproject.Service.StationServiceProvider;
 
@@ -50,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
