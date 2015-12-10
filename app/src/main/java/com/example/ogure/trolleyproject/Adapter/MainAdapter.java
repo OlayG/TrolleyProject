@@ -40,14 +40,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView TvRouteName;
-        public ImageView IvImageView;
+//        public ImageView IvImageView;
         public CardView mCardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             TvRouteName = (TextView) itemView.findViewById(R.id.route_name);
-            IvImageView = (ImageView) itemView.findViewById(R.id.trolley_photo);
+//            IvImageView = (ImageView) itemView.findViewById(R.id.trolley_photo);
             mCardView = (CardView) itemView.findViewById(R.id.cv);
             mCardView.setOnClickListener(this);
         }
