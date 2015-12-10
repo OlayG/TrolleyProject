@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         StationService stationService = StationServiceProvider.createService(StationService.class);
         Call<List<Bus>> call = stationService.listTrolley();
         call.enqueue(new Callback<List<Bus>>() {
+
             @Override
             public void onResponse(Response<List<Bus>> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
