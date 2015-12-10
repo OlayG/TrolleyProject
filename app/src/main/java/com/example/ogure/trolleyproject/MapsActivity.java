@@ -36,6 +36,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
 
 
@@ -74,10 +76,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // You can customize the marker image using images bundled with
         // your app, or dynamically generated bitmaps.
+        //Willis
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("station_flag", 100, 100)))
                 .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
                 .position(new LatLng(40.6789642, -74.2329902)));
+
+        //Green Lane
+        map.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("station_flag", 100, 100)))
+                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+                .position(new LatLng(40.681814, -74.236587)));
+
+        //East Campus
+        map.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("station_flag", 100, 100)))
+                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+                .position(new LatLng(40.681053, -74.225763)));
+
     }
 
 

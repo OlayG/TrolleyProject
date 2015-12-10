@@ -20,16 +20,19 @@ public class Station implements Serializable {
     public double mStationLat;
     @SerializedName("long")
     public double mStationLong;
+    @SerializedName("prediction")
+    public double timestamp;
 
     public int getmStationId() {
         return mStationId;
     }
 
-    public Station(int mStationId, String mStationName, double mStationLat, double mStationLong) {
+    public Station(int mStationId, String mStationName, double mStationLat, double mStationLong, double timestamp) {
         this.mStationId = mStationId;
         this.mStationName = mStationName;
         this.mStationLat = mStationLat;
         this.mStationLong = mStationLong;
+        this.timestamp = timestamp;
     }
 
     public void setmStationId(int mStationId) {
@@ -60,43 +63,11 @@ public class Station implements Serializable {
         this.mStationLong = mStationLong;
     }
 
-    //PARCELABLE
-/*    public Station(Parcel parcel) {
-        setmStationId(parcel.readInt());
-        setmStationName(parcel.readString());
-        setmStationLat(parcel.readDouble());
-        setmStationLong(parcel.readDouble());
+    public double getTimestamp(){
+        return timestamp;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setTimestamp(double timestamp) {
+        this.timestamp = timestamp;
     }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(mStationId);
-        dest.writeString(mStationName);
-        dest.writeDouble(mStationLat);
-        dest.writeDouble(mStationLong);
-    }
-
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator<Station>() {
-        @Override
-        public Station createFromParcel(Parcel source) {
-            return new Station(source);
-        }
-
-        @Override
-        public Station[] newArray(int size) {
-            return new Station[size];
-        }
-    };
-
-    public void readFromParcel(Parcel in) {
-        mStationId = in.readInt();
-        mStationName = in.readString();
-        mStationLat = in.readDouble();
-        mStationLong = in.readDouble();
-    }*/
 }

@@ -16,8 +16,8 @@ public interface StationService {
     @GET("routes")
     Call<List<Bus>> listTrolley();
 
-    @GET("routes")
-    Call<List<Bus.stations>> listStations();
+    @GET("routes/1/stations")
+    Call<List<Station>> listStations();
 
     /*@GET("stations")
     Call<List<Station>> listStations();*/

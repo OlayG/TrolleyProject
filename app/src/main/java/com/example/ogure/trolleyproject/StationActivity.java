@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.ogure.trolleyproject.Adapter.StationsAdapter;
 import com.example.ogure.trolleyproject.Model.Bus;
+import com.example.ogure.trolleyproject.Model.Station;
 import com.example.ogure.trolleyproject.Service.StationService;
 import com.example.ogure.trolleyproject.Service.StationServiceProvider;
 
@@ -63,11 +64,10 @@ public class StationActivity extends AppCompatActivity {
         TvStationName.setText(station_name);
 
         StationService stationService = StationServiceProvider.createService(StationService.class);
-        Call<List<Bus>> call = stationService.listTrolley();
-        call.enqueue(new Callback<List<Bus>>() {
-
+        Call<List<Station>> call = stationService.listStations();
+        call.enqueue(new Callback<List<Station>>() {
             @Override
-            public void onResponse(Response<List<Bus>> response, Retrofit retrofit) {
+            public void onResponse(Response<List<Station>> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
                     mAdapter = new StationsAdapter(response.body());
                     mRecyclerView.setAdapter(mAdapter);
