@@ -21,13 +21,13 @@ public class Station implements Serializable {
     @SerializedName("long")
     public double mStationLong;
     @SerializedName("prediction")
-    public double timestamp;
+    public String timestamp;
 
     public int getmStationId() {
         return mStationId;
     }
 
-    public Station(int mStationId, String mStationName, double mStationLat, double mStationLong, double timestamp) {
+    public Station(int mStationId, String mStationName, double mStationLat, double mStationLong, String timestamp) {
         this.mStationId = mStationId;
         this.mStationName = mStationName;
         this.mStationLat = mStationLat;
@@ -63,11 +63,11 @@ public class Station implements Serializable {
         this.mStationLong = mStationLong;
     }
 
-    public double getTimestamp(){
+    public String getTimestamp(){
         return timestamp;
     }
 
-    public void setTimestamp(double timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }
