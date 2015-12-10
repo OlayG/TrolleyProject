@@ -54,9 +54,6 @@ public class StationActivity extends AppCompatActivity {
         String trolley_name = startingIntent.getStringExtra("trolley_name");
         getSupportActionBar().setTitle(trolley_name);
 
-        TvStationName = (TextView) findViewById(R.id.TvStationName);
-        TvStationName.setText(station_name);
-
         loadRV1();
     }
 
