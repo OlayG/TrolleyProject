@@ -90,6 +90,26 @@ public class Bus implements Serializable {
         private double stationLat;
         @SerializedName("long")
         private double stationLong;
+        @SerializedName("_pivot_bus_id")
+        private int mStationPiviotBusId;
+        @SerializedName("_pivot_station_id")
+        private int mStationPiviotStationId;
+
+        public int getmStationPiviotStationId() {
+            return mStationPiviotStationId;
+        }
+
+        public void setmStationPiviotStationId(int mStationPiviotStationId) {
+            this.mStationPiviotStationId = mStationPiviotStationId;
+        }
+
+        public int getmStationPiviotBusId() {
+            return mStationPiviotBusId;
+        }
+
+        public void setmStationPiviotBusId(int mStationPiviotBusId) {
+            this.mStationPiviotBusId = mStationPiviotBusId;
+        }
 
         public double getStationLong() {
             return stationLong;

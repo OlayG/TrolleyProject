@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.ogure.trolleyproject.GlobalVar.Globals;
 import com.example.ogure.trolleyproject.Model.Bus;
-import com.example.ogure.trolleyproject.Model.Station;
 import com.example.ogure.trolleyproject.R;
 
 import java.util.ArrayList;
@@ -22,14 +21,20 @@ import java.util.List;
  */
 public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHolder> {
 
-    private static List<Station> mStations;
+    private static List<Bus> mStations;
     private static List<Bus.stations> mBusStations;
 
-    public StationsAdapter(List<Station> stations) {
+
+
+    public StationsAdapter(List<Bus> stations) {
         mStations = stations;
+        mBusStations = new ArrayList<>();
+        for (Bus bus : stations) {
+            mBusStations.addAll(bus.getStationsList());
+        }
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView TvStationName;
 //        public ImageView IvImageView;
         public CardView mCardView;
@@ -44,8 +49,16 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
 //            IvImageView = (ImageView) itemView.findViewById(R.id.station_photo);
             stationID = (TextView) itemView.findViewById(R.id.station_id);
             mCardView = (CardView) itemView.findViewById(R.id.cv1);
+            mCardView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Bus.stations og = mBusStations.get(position);
+
+            Toast.makeText(v.getContext(), position , Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
